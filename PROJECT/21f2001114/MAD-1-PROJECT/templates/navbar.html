@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbarstyle.css') }}"/>
+</head>
+<body>
+    <div class="navigation-bar">
+        <p class="name">Hello {{current_user.firstname.capitalize()}}</p>
+        <div class="right-links">
+            <a href="/{{current_user.username}}/feed">Feed</a>
+            <a href="/{{current_user.username}}/search">Search</a>
+            <div id="profile-div">
+                <p>Account</p>
+                <div id="links">
+                    <a href="/profile/{{current_user.username}}">Profile</a>
+                    <a href="/update_account">Update account</a>
+                    <a href="/delete_account">Delete Account</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

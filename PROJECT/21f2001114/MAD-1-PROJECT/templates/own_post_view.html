@@ -1,0 +1,13 @@
+{% extends 'post_template.html' %}
+
+{% block by %} 
+    <p>By <a href="/profile/{{current_user.username}}">{{current_user.username}}</a></p>
+{% endblock %} 
+
+{% block update %}
+    <a href="/{{current_user.username}}/update_own_post/{{post.id}}">Update</a>
+{% endblock %}
+
+{% block delete %} 
+    <a href="/{{current_user.username}}/delete_own_post/{{post.id}}">Delete</a>
+{% endblock %}

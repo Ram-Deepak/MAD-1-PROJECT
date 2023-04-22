@@ -1,0 +1,44 @@
+.feed-posts{
+    /* margin-left: 85px;
+    margin-right: 85px; */
+    margin : 30px 85px 10px;
+}
+
+.feed-posts{
+    display: grid;
+}
+
+.feed-posts a{
+    text-decoration: none;
+    color: black;
+}
+
+#post{
+    background-color: antiquewhite;
+    padding-left: 5px;
+    padding-right: 5px;
+    /* margin-top: -1px; */
+}
+
+#top-info{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 25px;
+}
+
+#username a{
+    text-align: left;
+    color: gray;
+}
+
+#username a:hover{
+    color: darkorchid;
+}
+
+#date{
+    text-align: right;
+}
+
+hr{
+    width: 100%;
+}

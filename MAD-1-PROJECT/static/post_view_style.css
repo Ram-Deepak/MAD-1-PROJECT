@@ -1,0 +1,47 @@
+.post{
+    margin: 50px 230px 30px 230px;
+    background-color: antiquewhite;
+    padding: 5px 20px 20px;
+}
+
+/* .post-inner-box{ */
+    /* margin: 20px; */
+    /* padding: 10px; */
+/* } */
+
+#top-section{
+    display: grid;
+    grid-template-columns: auto auto;
+    /* background-color: brown; */
+}
+
+#by{
+    text-align: left;
+}
+
+#date{
+    text-align: right;
+}
+
+#title{
+    text-decoration-line: underline;
+}
+
+img{
+    width: 100%;
+}
+
+.post-operations{
+    display: grid;
+    grid-template-columns: auto auto;
+    /* margin: 3px; */
+    /* padding-bottom: 3px; */
+}
+
+#update{
+    text-align: left;
+}
+
+#delete{
+    text-align: right;
+}

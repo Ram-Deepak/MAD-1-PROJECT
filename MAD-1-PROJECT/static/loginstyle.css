@@ -1,0 +1,20 @@
+body{
+    background-color: black;
+}
+
+#heading{
+    text-align: center;
+    font-family: cursive;
+    font-style: oblique;
+    color: white;
+}
+
+#form-div {
+    margin-top: 100px;
+    text-align: center;
+    background-color: wheat;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{name}}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='viewstyle.css')}}"/>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="information">
+        <div class="photo">
+            <img src="{{ url_for('static', filename='images/img.jpeg') }}" alt="profile"/>
+        </div>
+        <div class="info">
+            <div class="user-name">
+                <p>{{account_username}}</p>
+            </div>
+            <div class="details">
+                <div class="posts">
+                    <p>{{ profile.posts }}</p>
+                    <p>Posts</p>
+                </div>
+                <div class="followers">
+                    <a href="/{{current_user.username}}/view/{{account_username}}/followers">
+                        <p>{{ profile.followers }}</p>
+                        <p>Followers</p>
+                    </a>
+                </div>
+                <div class="following">
+                    <a href="/{{current_user.username}}/view/{{account_username}}/following">
+                        <p>{{ profile.following }}</p>
+                        <p>Following</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="condition">
+        <button>
+            {% if following %}
+                <a href="/{{current_user.username}}/unfollow/{{account_username}}">Unfollow</a>
+            {% elif follow_back %}
+                <a href="/{{current_user.username}}/follow/{{account_username}}">Follow back</a>
+            {% else %}
+                <a href="/{{current_user.username}}/follow/{{account_username}}">Follow</a>
+            {% endif %}
+        </button>
+    </div>
+    <hr>
+    <div class="user-posts">
+        <div class="headings">
+            <div class="posts-heading">
+                <h4>Posts</h4>
+            </div>
+        </div>
+        {% if profile.posts==0 %}
+            <div class="new">
+                <h4>No posts</h4>
+            </div>
+        {% else %}
+        <div class="existing-posts">
+            {% for post in posts %}
+                <a class="post-ref" href="/{{current_user.username}}/showpost/{{account_username}}/{{post.id}}">
+                    <div class="post">
+                        <p>{{post.title}}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div> 
+        {% endif %}
+    </div>
+</body>
+</html>

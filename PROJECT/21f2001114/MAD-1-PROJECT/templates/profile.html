@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='profilestyle.css')}}"/>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="information">
+        <div class="photo">
+            <img src="{{ url_for('static', filename='images/img.jpeg') }}" alt="profile"/>
+            <!-- <img src="/home/ram/Desktop/IIT-M/PROJECT/21f2001114/MAD-1-PROJECT/static/images/img.jpeg" alt="profile"/> -->
+            <p>Change profile photo</p>
+            <form action="/{{current_user.username}}/update_image" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image"/><br/>
+                <input type="submit" value="Upload"/>
+            </form>
+        </div>
+        <div class="info">
+            <div class="user-name">
+                <p>{{current_user.username}}</p>
+            </div>
+            <div class="details">
+                <div class="posts">
+                    <p>{{ profile.posts }}</p>
+                    <p>Posts</p>
+                </div>
+                <div class="followers">
+                    <a href="/profile/{{current_user.username}}/followers">
+                        <p>{{ profile.followers }}</p>
+                        <p>Followers</p>
+                    </a>
+                </div>
+                <div class="following">
+                    <a href="/profile/{{current_user.username}}/following">
+                        <p>{{ profile.following }}</p>
+                        <p>Following</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="user-posts">
+        <div class="headings">
+            <div class="posts-heading">
+                <h4>Posts</h4>
+            </div>
+            <div class="create-posts">
+                <h4><a href="/create_post/{{current_user.username}}">+ Create Post</a></h4>
+            </div>
+        </div>
+        {% if profile.posts==0 %}
+            <div class="new">
+                <h4>You haven't posted anything</h4>
+            </div>
+        {% else %}
+            <div class="existing-posts">
+                {% for post in posts %}
+                    <a class="post-ref" href="/{{current_user.username}}/showpost/{{post.id}}">
+                        <div class="post">
+                            <p>{{post.title}}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div> 
+        {% endif %}
+    </div>
+</body>
+</html>

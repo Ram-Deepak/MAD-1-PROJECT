@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='feedstyle.css')}}" type="text/css"/>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="feed-posts">
+        <hr>
+        {% if posts==[] %}
+            <h3 style="text-align: center;">Nothing to show</h3>
+        {% else %}
+            {% for post in posts %}
+                <div id="post">
+                    <div id="top-info">
+                        <div id="username">
+                            <p>By <a href="/{{current_user.username}}/view/{{post.username}}">{{post.username}}</a></p>
+                        </div>
+                        <div id="date">
+                            <p>{{post.created.date()}}</p>
+                        </div>
+                    </div>
+                    <div id="title">   
+                        <a href="/{{current_user.username}}/showpost/{{post.username}}/{{post.id}}"> 
+                            <h3 style="text-decoration: underline;">{{post.title}}</h3>
+                            <p>{{post.description[:60]}}......</p>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{% extends 'post_template.html' %}
+
+{% block by %} 
+    <p>By <a href="/{{current_user.username}}/view/{{username}}">{{username}}</a></p>
+{% endblock %} 

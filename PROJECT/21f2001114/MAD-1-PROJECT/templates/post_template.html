@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='post_view_style.css') }}" type="text/css"/>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="post">
+        <div class="post-inner-box">
+            <div id="top-section">
+                <div id="by">
+                    {% block by %}{% endblock %}
+                </div>
+                <div id="date">
+                    <p>{{post.created.date()}}</p>
+                </div>
+            </div>
+            <div id="title">
+                <h3>{{post.title}}</h3>
+            </div>
+            <div id="description">
+                <p>{{post.description}}</p>
+            </div>
+            <div id="photo">
+                <img src="{{ url_for('static', filename='images/post.jpeg') }}" alt="post-image"/>
+            </div>
+            <div class="post-operations">
+                <div id="update">
+                    {% block update %}{% endblock %}
+                </div>
+                <div id="delete">
+                    {% block delete %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

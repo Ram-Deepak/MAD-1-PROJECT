@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create post</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='createpoststyle.css') }}"/>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h4 style="text-align:center;">New Post</h4>
+    <div class="new-post">
+        <form action="/create_post/{{current_user.username}}" method="POST" enctype="multipart/form-data">
+            {{form.hidden_tag()}}
+            <table>
+                <tr>
+                    <td><label>Title : </label></td>
+                    <td><div id="title">{{form.title}}</div></td>
+                </tr>
+                <tr>
+                    <td><label>Description : </label></td>
+                    <td><div id="desc">{{form.description(rows='5', cols='40')}}</div></td>
+                </tr>
+                <tr>
+                    <td><lable>Upload image : </lable></td>
+                    <td>{{form.photo}}</td>
+                </tr>
+            </table>
+            {{form.submit}}
+        </form>
+    </div>
+</body>
+</html>

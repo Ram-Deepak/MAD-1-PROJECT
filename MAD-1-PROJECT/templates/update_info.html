@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='update_info_style.css')}}" type="text/css"/>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h4 style="text-align: center;">Update info</h4>
+    <form action="/update_account" method="POST">
+        {{form.hidden_tag()}}
+        <table>
+            <tr>
+                <td>First Name: </td>
+                <td>{{form.first_name}}</td>
+            </tr>
+            <tr>
+                <td>Last Name: </td>
+                <td>{{form.last_name}}</td>
+            </tr>
+        </table>
+        <div id="submit">
+            {{form.submit}}
+        </div>
+    </form>
+</body>
+</html>

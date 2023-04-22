@@ -1,0 +1,54 @@
+body{
+    margin: 0px;
+}
+
+.navigation-bar{
+    background-color: #44318D;
+    overflow: hidden;
+    margin: 0px;
+    /* z-index: 0; */
+    /* top: 0;
+    width: 100%;
+    position: fixed; */
+}
+
+.navigation-bar p{
+    float: left;
+    color: white;
+    font-size: 17px;
+    padding-left: 18px;
+}
+
+.navigation-bar a{
+    float: left;
+    text-align: center;
+    font-size: 17px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.right-links{
+    float: right;
+}
+
+.navigation-bar a:hover{
+    background-color: black;
+    color: white;
+}
+
+#profile-div{
+    display: inline-block;
+    padding-right: 20px;
+}
+
+#links{
+    display: none;
+    position: absolute;
+    color: white;
+    background-color: #44318D;
+}
+
+#profile-div:hover #links{
+    display: block;
+}

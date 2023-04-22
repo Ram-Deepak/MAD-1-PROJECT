@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register Form</h1>
+    <form method="POST" action="/register">
+        {{ form.hidden_tag() }}<br/>
+        <label>First name</label><br/>
+        {{ form.first_name }}<br/>
+        <label>Last name</label><br/>
+        {{ form.last_name }}<br/>
+        <label>Email</label><br/>
+        {{ form.email }}<br/>
+        <label>Username</label><br/>
+        {{ form.username }}<br/>
+        <label>Password</label><br/>
+        {{ form.password }}<br/>
+        {{ form.submit }}
+    </form>
+    <br/>
+    <a href="/login">Have an account? Login</a>
+</body>
+</html>

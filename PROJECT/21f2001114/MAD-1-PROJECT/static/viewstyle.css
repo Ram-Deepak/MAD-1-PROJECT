@@ -1,0 +1,10 @@
+@import "profilestyle.css";
+
+.condition{
+    text-align: center;
+}
+
+.followers a, .following a{
+    text-decoration: none;
+    color: black;
+}

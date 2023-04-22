@@ -1,0 +1,13 @@
+{% extends 'follow_template.html' %}
+
+{% block details %}
+    {% if following_list==[] %}
+        <p>Currently you don't follow anyone</p>
+    {% else %}
+        <ul class="list-of-users">
+            {% for user in following_list %}
+                <li><a href="/{{current_user.username}}/view/{{user.username}}">{{ user.username }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

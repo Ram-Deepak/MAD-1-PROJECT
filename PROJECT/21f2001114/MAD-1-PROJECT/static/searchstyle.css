@@ -1,0 +1,33 @@
+.search-bar{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#search {
+    width: 65%;
+    height: 30px;
+    border-color: black;
+    padding: 12px 18px 12px 30px;
+    font-size: 17px;
+}
+
+.results{
+    margin-left : 120px;
+    margin-right: 220px;
+    display: grid;
+    grid-template: auto;
+}
+
+.account-ids{
+    list-style-type: none;
+}
+
+.account-ids a{
+    text-decoration: none;
+    border: 1px solid;
+    display: block;
+    color: black;
+    background-color: beige;
+    padding: 12px;
+    margin-top: -1px;
+}

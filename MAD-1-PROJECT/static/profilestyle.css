@@ -1,0 +1,103 @@
+.information{
+    margin: 0px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.photo{
+    padding: 40px 50px 30px 150px;
+    /* float: left; */
+}
+
+.info {
+    /* float: right;*/
+    margin-right: 130px;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.details{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* margin-top: 0px; */
+}
+
+.user-name{
+    margin-top: 5px;
+    text-align: center;
+    padding-right: 35px;
+    padding-top: 30px;
+    text-decoration: underline;
+}
+
+.posts, .followers, .following{
+    /* float :left; */
+    margin: 0px 50px 50px 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.followers a, .following a{
+    text-decoration: none;
+    color: black;
+}
+
+img{
+    border-radius: 10%;
+    width: 125px;
+}
+
+hr{
+    /* margin-top: 270px; */
+    margin-top: 0px;
+    width: 85%;
+}
+
+.user-posts{
+    /* display: grid; */
+    margin-left: 85px;
+    margin-right: 85px;
+}
+
+.headings{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.posts-headings{
+    text-align: left;
+}
+
+.create-posts{
+    text-align: right;
+}
+
+.new{
+    text-align: center;
+}
+
+.existing-posts{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.post{
+    text-align: center;
+    background-color: aqua;
+    margin: 10px;
+    padding: 50px;
+}
+
+.post p{
+    font-size: 17px;
+}
+
+.post-ref{
+    text-decoration: none;
+    color: black;
+}
+
+.post:hover{
+    /* transform: scale(1.2); */
+    background-color: yellowgreen;
+}
